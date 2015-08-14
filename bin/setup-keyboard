@@ -1,0 +1,4 @@
+#!/bin/sh
+
+colemak-backspace-to-caps
+caps-to-ctrl-esc

@@ -1,0 +1,2 @@
+user=$(who | awk '{print $1}')
+/usr/sbin/physlock -ds -u $user

@@ -1,0 +1,88 @@
+! #include "Xresources.d/base16-default.dark.xresources"
+! #include "Xresources.d/base16-tomorrow.dark.xresources"
+! #include "Xresources.d/base16-atelierlakeside.dark.xresources"
+! #include "Xresources.d/base16-atelierlakeside.dark.256.xresources"
+! #include "Xresources.d/base16-solarized.dark.256.xresources"
+! #include "Xresources.d/base16-solarized.dark.xresources"
+
+! #include "Xresources.d/darkburn.xresources"
+! #include "Xresources.d/twilight.xresources"
+! #include "Xresources.d/zenburn.xresources"
+#include "Xresources.d/jellybeans.xresources"
+! #include "Xresources.d/altercation-solarized.xresources"
+
+
+! Global Settings
+Xterm*termName: xterm-256color
+URxvt*termName: rxvt-unicode-256color
+! URxvt*termName: rxvt-unicode
+! URxvt*termName: rxvt-256color
+
+
+! Urxvt Generic Settings
+URxvt.borderless  : true
+URxvt.buffered    : true
+URxvt.colorUL     : #0088CC
+URxvt.depth       : 32
+URxvt.loginShell  : true
+URxvt.saveLines   : 5000
+
+
+! Scrollbar
+URxvt.scrollBar           : false
+URxvt.scrollBar_right     : false
+URxvt.scrollBar_floating  : false
+URxvt.scrollstyle         : plain
+Urxvt.secondaryScroll     :  true
+
+
+! Cursor
+Xcursor.theme : Adwaita
+Xcursor.size  : 12
+
+
+! URxvt-Perls
+URxvt*altSendsEscape        : true
+URxvt.perl-ext-common       : default,clipboard,keyboard-select,url-select
+URxvt.keysym.M-c            : perl:clipboard:copy
+URxvt.keysym.M-v            : perl:clipboard:paste
+URxvt.keysym.M-C-v          : perl:clipboard:paste_escaped
+URxvt.keysym.M-Escape       : perl:keyboard-select:activate
+URxvt.keysym.M-s            : perl:keyboard-select:search
+URxvt.keysym.M-u            : perl:url-select:select_next
+URxvt.url-select.button     : 1
+URxvt.url-select.launcher   : firefox
+URxvt.url-select.underline  : true
+
+
+! Font Settings
+! URxvt*font           : xft:Inconsolata:size=10:antialias=true:hinting=true
+! URxvt*font           : xft:Source Code Pro for Powerline:size=9:antialias=true:hinting=true
+! URxvt*font           : xft:Terminus:size=10:antialias=true:hinting=true
+! URxvt*font           : xft:Tamsyn:size=14
+! URxvt*boldFont       :
+! URxvt*italicFont     :
+! URxvt*boldItalicFont :
+
+! Source Code Pro Setup
+! URxvt*font            : xft:source code pro for powerline:regular:pixelsize=12
+! URxvt*imFont          : xft:source code pro for powerline:regular:pixelsize=12
+! URxvt*boldFont        : xft:source code pro for powerline:semibold:pixelsize=12
+! URxvt*italicFont      : xft:source code pro for powerline:italic:pixelsize=12
+! URxvt*boldItalicFont  : xft:source code pro for powerline:semibold:italic:pixelsize=12
+! URxvt*letterSpace     : 0.5
+
+! URxvt*font            : xft:bitstream vera sans mono:regular:pixelsize=12
+URxvt*font            : xft:input:regular:pixelsize=12
+
+! Font Xft
+xft.antialias  : true
+Xft.autohint   : 0
+Xft.dpi        : 96
+Xft.hinting    : true
+Xft.hintstyle  : hintslight
+! Xft.hintstyle  : hintfull
+Xft.lcdfilter  : lcddefault
+! Xft.rgba       : rgb
+! Xft.rgba       : rgba
+Xft.rgba       : none

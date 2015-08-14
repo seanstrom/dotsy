@@ -1,0 +1,10 @@
+" let g:solarized_base16=1
+" let base16colorspace=16
+" colorscheme base16-solarized
+" colorscheme solarized
+
+colorscheme jellybeans
+let g:airline_theme='jellybeans'
+
+set bg=dark
+set noshowmode
