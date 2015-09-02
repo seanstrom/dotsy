@@ -1,0 +1,9 @@
+#!/bin/sh
+
+if [ -z $1 ]; then
+    touchpadName='touchpad'
+else
+    touchpadName=$1
+fi
+
+echo $(get-xinput-id "$touchpadName")

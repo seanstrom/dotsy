@@ -1,0 +1,13 @@
+#!/bin/sh
+
+if [ -z $1 ]; then
+    deviceName=''
+else
+    deviceName=$1
+fi
+
+deviceId=$(xinput list |
+           grep -oi "$deviceName.*id=.[0-9]" |
+           cut -f2- -d=)
+
+echo $deviceId

@@ -1,0 +1,4 @@
+#!/bin/sh
+id=$(get-touchpad-id)
+xinput set-prop $id "Synaptics Palm Detection" 1
+xinput set-prop $id "Synaptics Palm Dimensions" 15, 100
