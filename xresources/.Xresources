@@ -1,15 +1,5 @@
-! #include "Xresources.d/base16-default.dark.xresources"
-! #include "Xresources.d/base16-tomorrow.dark.xresources"
-! #include "Xresources.d/base16-atelierlakeside.dark.xresources"
-! #include "Xresources.d/base16-atelierlakeside.dark.256.xresources"
-! #include "Xresources.d/base16-solarized.dark.256.xresources"
-! #include "Xresources.d/base16-solarized.dark.xresources"
-
-! #include "Xresources.d/darkburn.xresources"
-! #include "Xresources.d/twilight.xresources"
-! #include "Xresources.d/zenburn.xresources"
-#include "Xresources.d/jellybeans.xresources"
-! #include "Xresources.d/altercation-solarized.xresources"
+! #include "Xresources.d/hybrid.xresources"
+#include ".Xresources.d/altercation-solarized.xresources"
 
 
 ! Global Settings
@@ -56,24 +46,8 @@ URxvt.url-select.underline  : true
 
 
 ! Font Settings
-! URxvt*font           : xft:Inconsolata:size=10:antialias=true:hinting=true
-! URxvt*font           : xft:Source Code Pro for Powerline:size=9:antialias=true:hinting=true
-! URxvt*font           : xft:Terminus:size=10:antialias=true:hinting=true
-! URxvt*font           : xft:Tamsyn:size=14
-! URxvt*boldFont       :
-! URxvt*italicFont     :
-! URxvt*boldItalicFont :
-
-! Source Code Pro Setup
-! URxvt*font            : xft:source code pro for powerline:regular:pixelsize=12
-! URxvt*imFont          : xft:source code pro for powerline:regular:pixelsize=12
-! URxvt*boldFont        : xft:source code pro for powerline:semibold:pixelsize=12
-! URxvt*italicFont      : xft:source code pro for powerline:italic:pixelsize=12
-! URxvt*boldItalicFont  : xft:source code pro for powerline:semibold:italic:pixelsize=12
-! URxvt*letterSpace     : 0.5
-
-! URxvt*font            : xft:bitstream vera sans mono:regular:pixelsize=12
-URxvt*font            : xft:input:regular:pixelsize=12
+URxvt*font     : xft:input:regular:pixelsize=12, xft:dejavu sans:regular:pixelsize=12
+URxvt*boldFont : xft:input:regular:pixelsize=12, xft:dejavu sans:regular:pixelsize=12
 
 ! Font Xft
 xft.antialias  : true
