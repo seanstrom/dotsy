@@ -1,5 +1,5 @@
 [core]
-  excludesfile = ~/.dotmods/git/gitignore_global
+  excludesfile = ./gitignore_global
   editor = vim
 [alias]
   st = status --short --branch
@@ -16,4 +16,4 @@
 [merge]
   conflictstyle = diff3
 [include]
-  path = ~/.dotmods/git/gitconfig_user
+  path = ./gitconfig_user
