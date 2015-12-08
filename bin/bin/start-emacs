@@ -1,2 +1,2 @@
 #!/bin/sh
-emacs --daemon
+KONSOLE_DBUS_SESSION=1 emacs --daemon
