@@ -1,0 +1,10 @@
+#!/bin/sh
+# 
+# brightness.sh
+#
+# $1 = up/down
+
+steps=10
+
+[[ "$1" = "up" ]] && xbacklight -inc "$steps"
+[[ "$1" = "down" ]] && xbacklight -dec "$steps"
