@@ -26,14 +26,14 @@ values."
      auto-completion
      better-defaults
      emacs-lisp
-     ;; git
-     ;; markdown
+     git
+     markdown
      ;; org
      ;; (shell :variables
      ;;        shell-default-height 30
      ;;        shell-default-position 'bottom)
      ;; spell-checking
-     ;; syntax-checking
+     syntax-checking
      ;; version-control
      scheme
      racket
@@ -46,12 +46,15 @@ values."
      nixos
      c-c++
      lua
+     html
      )
    ;; List of additional packages that will be installed without being
    ;; wrapped in a layer. If you need some configuration for these
    ;; packages then consider to create a layer, you can also put the
    ;; configuration in `dotspacemacs/config'.
-   dotspacemacs-additional-packages '()
+   dotspacemacs-additional-packages '(livescript-mode
+                                      stylus-mode
+                                      jade-mode)
    ;; A list of packages and/or extensions that will not be install and loaded.
    dotspacemacs-excluded-packages '()
    ;; If non-nil spacemacs will delete any orphan packages, i.e. packages that
@@ -212,6 +215,34 @@ layers configuration. You are free to put any user code."
   (add-hook 'window-configuration-change-hook
             (lambda ()
               (set-window-margins (car (get-buffer-window-list (current-buffer) nil t)) 2 2)))
+
+  ;; Javascript
+  (setq js2-strict-missing-semi-warning nil)
+  (setq js-indent-level 2)
+  (setq js2-indent-level 2)
+  (setq jsx-indent-level 2)
+  (setq Javascript-indent-level 2)
+  (setq js2-basic-offset 2)
+  (setq-default js2-global-externs '("module"
+                                     "exports"
+                                     "require"
+                                     "process"
+                                     "setTimeout"
+                                     "clearTimeout"
+                                     "setInterval"
+                                     "clearInterval"
+                                     "__dirname"
+                                     "console"
+                                     "describe"
+                                     "context"
+                                     "it"
+                                     "beforeEach"
+                                     "before"
+                                     "after"
+                                     "afterEach"
+                                     "JSON"))
+  (custom-set-variables
+   '(evil-shift-width 2))
 )
 
 ;; Do not write anything past this comment. This is where Emacs will
