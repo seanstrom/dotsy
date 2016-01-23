@@ -1,2 +1,2 @@
 #!/bin/sh
-KONSOLE_DBUS_SESSION=1 emacs --daemon
+KONSOLE_DBUS_SESSION=1 emacs --daemon -u $USER
