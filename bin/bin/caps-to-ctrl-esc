@@ -1,2 +1,2 @@
 #!/bin/sh
-xcape -e "Control_L=Control_L|Escape"
+xcape -e "Control_L=Escape|Control_L"
