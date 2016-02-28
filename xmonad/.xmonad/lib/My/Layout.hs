@@ -1,10 +1,8 @@
 {-# LANGUAGE
-     DeriveDataTypeable,
      FlexibleContexts,
      FlexibleInstances,
      MultiParamTypeClasses,
      NoMonomorphismRestriction,
-     PatternGuards,
      ScopedTypeVariables,
      TypeSynonymInstances,
      UndecidableInstances
