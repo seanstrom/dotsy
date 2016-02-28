@@ -1,0 +1,3 @@
+#! /usr/bin/env sh
+name=$(echo "$@" | cut -f 1 -d '.')
+ghc "$@" && ./"$name"
