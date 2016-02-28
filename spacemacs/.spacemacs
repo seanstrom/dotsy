@@ -206,6 +206,7 @@ values."
   "Initialization function for user code.
 It is called immediately after `dotspacemacs/init'.  You are free to put any
 user code."
+  (setq-default flycheck-disabled-checkers '(haskell-stack-ghc))
   )
 
 (defun dotspacemacs/user-config ()
@@ -243,6 +244,9 @@ layers configuration. You are free to put any user code."
                                      "JSON"))
   (custom-set-variables
    '(evil-shift-width 2))
+  (setq-default dotspacemacs-configuration-layers
+                '((haskell :variables haskell-process-type 'cabal-ghci)))
+  (setq-default flycheck-disabled-checkers '(haskell-stack-ghc))
 )
 
 ;; Do not write anything past this comment. This is where Emacs will
