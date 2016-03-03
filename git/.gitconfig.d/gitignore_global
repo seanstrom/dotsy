@@ -1,2 +1,3 @@
 *.swp
 logfile
+.stack-work/
