@@ -1,6 +1,6 @@
 export PATH=~/.npm-global/bin:$PATH:~/.nix-profile/bin:~/.local/bin
 export NIXPKGS=~/dev/nixpkgs
-export EDITOR=vim
+export EDITOR=nvim
 
 NIX_GHC_BIN=$(dirname `which ghc`)
 

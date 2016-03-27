@@ -4,6 +4,8 @@ so ~/.vim/shortcuts.vim
 so ~/.vim/plugins.vim
 so ~/.vim/colorscheme.vim
 
+let $NVIM_TUI_ENABLE_TRUE_COLOR=1
+
 syntax enable " Enable syntax highlighting
 filetype plugin indent on
 
