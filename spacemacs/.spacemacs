@@ -41,6 +41,7 @@ values."
      haskell
      purescript
      javascript
+     react
      ruby
      go
      nixos
@@ -56,7 +57,7 @@ values."
                                       stylus-mode
                                       jade-mode)
    ;; A list of packages and/or extensions that will not be install and loaded.
-   dotspacemacs-excluded-packages '()
+   dotspacemacs-excluded-packages '(auto-complete)
    ;; If non-nil spacemacs will delete any orphan packages, i.e. packages that
    ;; are declared in a layer which is not a member of
    ;; the list `dotspacemacs-configuration-layers'. (default t)
@@ -206,7 +207,8 @@ values."
   "Initialization function for user code.
 It is called immediately after `dotspacemacs/init'.  You are free to put any
 user code."
-  (setq-default flycheck-disabled-checkers '(haskell-stack-ghc))
+  (add-to-list 'exec-path "~/.local/bin")
+  ;; (setq-default flycheck-disabled-checkers '(haskell-stack-ghc))
   )
 
 (defun dotspacemacs/user-config ()
@@ -218,6 +220,21 @@ layers configuration. You are free to put any user code."
               (set-window-margins (car (get-buffer-window-list (current-buffer) nil t)) 2 2)))
 
   ;; Javascript
+  (setq-default
+   ;; js2-mode
+   js2-basic-offset 2
+   ;; web-mode
+   css-indent-offset 2
+   web-mode-markup-indent-offset 2
+   web-mode-css-indent-offset 2
+   web-mode-code-indent-offset 2
+   web-mode-attr-indent-offset 2)
+
+  (with-eval-after-load 'web-mode
+    (add-to-list 'web-mode-indentation-params '("lineup-args" . nil))
+    (add-to-list 'web-mode-indentation-params '("lineup-concats" . nil))
+    (add-to-list 'web-mode-indentation-params '("lineup-calls" . nil)))
+
   (setq js2-strict-missing-semi-warning nil)
   (setq js-indent-level 2)
   (setq js2-indent-level 2)
@@ -244,10 +261,31 @@ layers configuration. You are free to put any user code."
                                      "JSON"))
   (custom-set-variables
    '(evil-shift-width 2))
-  (setq-default dotspacemacs-configuration-layers
-                '((haskell :variables haskell-process-type 'cabal-ghci)))
-  (setq-default flycheck-disabled-checkers '(haskell-stack-ghc))
+  ;; (setq-default dotspacemacs-configuration-layers
+  ;;               '((haskell :variables haskell-process-type 'cabal-ghci)))
+  ;; (setq-default flycheck-disabled-checkers '(haskell-stack-ghc))
 )
 
 ;; Do not write anything past this comment. This is where Emacs will
 ;; auto-generate custom variable definitions.
+(custom-set-variables
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(evil-shift-width 2)
+ '(safe-local-variable-values
+   (quote
+    ((eval progn
+           (setq flycheck-javascript-eslint-executable "~/dev/hashrabbit-org/hr-dashboard/node_modules/.bin/eslint"))
+     (haskell-process-args-ghci "ghci")
+     (haskell-process-path-ghci . "stack")
+     (haskell-process-type . stack-ghci)
+     (haskell-indent-spaces . 2)))))
+(custom-set-faces
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(company-tooltip-common ((t (:inherit company-tooltip :weight bold :underline nil))))
+ '(company-tooltip-common-selection ((t (:inherit company-tooltip-selection :weight bold :underline nil)))))
