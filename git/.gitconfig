@@ -1,5 +1,5 @@
 [core]
-  excludesfile = ./.gitconfig.d/gitignore_global
+  excludesfile = ~/.gitconfig.d/gitignore_global
   editor = vim
 [alias]
   st = status --short --branch
@@ -16,4 +16,4 @@
 [merge]
   conflictstyle = diff3
 [include]
-  path = ./.gitconfig.d/gitconfig_user
+  path = ~/.gitconfig.d/gitconfig_user
