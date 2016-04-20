@@ -12,55 +12,25 @@ myTopics =
   , "web"
   , "haskell"
   , "mail"
-  , "irc"
-  , "xm-conf"
-  , "gimp"
-  , "gitit"
-  , "admin"
+  , "chat"
+  , "writing"
   , "movie"
   , "music"
-  , "pdf"
-  , "doc"
-  , "xmc"
-  , "xme"
-  , "xm"
-  , "xmobar"
-  , "wip"
-  , "test"
   ]
 
 
 myTopicConfig = TopicConfig
   { topicDirs = M.fromList $
       [ ("a", "./")
-      , ("haskell", "haskell")
-      , ("xm-conf", ".xmonad")
-      , ("xme", "wip/x11-wm/xmonad/extras/xmonad-extras/XMonad")
-      , ("xm", "wip/x11-wm/xmonad/core/xmonad")
-      , ("xmc", "wip/x11-wm/xmonad/contrib/XMonadContrib/XMonad")
-      , ("xmobar", "wip/x11-wm/xmobar")
-      , ("movie", "media/movie")
-      , ("music", "media/music")
-      , ("doc", "doc")
-      , ("pdf", "ref")
-      , ("gitit", "wip/gitit")
-      , ("gimp", "./")
-      , ("wip", "wip")
+      , ("haskell", "dev/lyah")
+      , ("writing", "dev/wiki")
       ]
-  , defaultTopicAction = const $ spawnShell >*> 2
+  , defaultTopicAction = const $ spawnShell >*> 1
   , defaultTopic = "a"
   , maxTopicHistory = 10
   , topicActions = M.fromList $
-      [ ("xm-conf", spawnShellIn ".xmonad/lib/XMonad/Layout" >>
-                        spawn "urxvt -e vim ~/.xmonad/xmonad.hs")
-       , ("xmc"    , spawnShell >*> 2)
-       , ("xmobar" , spawnShellIn "wip/x11-wm/xmobar/Plugins" >*> 2)
-       , ("music"  , spawn "urxvt -e ncmpc -h /home/aavogt/.mpd/socket" >> spawn "export MPD_HOST=192.168.1.2; mpc && urxvt -e ncmpc -h 192.168.1.2")
-       , ("mail"   , spawnOn "mail" "urxvt -e mutt")
-       , ("irc"    , spawnOn "irc" "urxvt --title irc -e ssh engage")
-       , ("web"    , spawnOn "web" "firefox")
-       , ("pdf"    , spawnOn "pdf" "okular")
-       , ("gimp"   , spawnHere "gimp")
+      [ ("web" , spawnOn "web"  "chromium")
+      , ("chat", spawnOn "chat" "slack")
       ]
   }
 
