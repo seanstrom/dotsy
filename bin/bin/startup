@@ -1,0 +1,5 @@
+#!/bin/sh
+
+nm-applet &
+caps-to-ctrl-esc &
+touchpad &
