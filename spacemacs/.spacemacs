@@ -223,6 +223,8 @@ layers configuration. You are free to put any user code."
   (setq-default
    ;; js2-mode
    js2-basic-offset 2
+   js-switch-indent-offset 0
+   js2-indent-switch-body t
    ;; web-mode
    css-indent-offset 2
    web-mode-markup-indent-offset 2
