@@ -73,8 +73,8 @@ statusBarClean = safeSpawn "pkill -f" ["xmobar"]
 myTerminal = "termite"
 
 myConfig = additionalKeysP configObj (myKeys configObj)
-  where configObj = def { focusedBorderColor = "red"
-                  , focusFollowsMouse  = False
+  where configObj = def {
+                    focusFollowsMouse  = True
                   , handleEventHook    = myEventHook
                   , layoutHook         = myLayout
                   , logHook            = myLogHook
@@ -83,6 +83,9 @@ myConfig = additionalKeysP configObj (myKeys configObj)
                   , startupHook        = myStartupHook configObj
                   , terminal           = myTerminal
                   , workspaces         = myTopics
+                  , borderWidth = 4
+                  , focusedBorderColor = "#6A555C" --"#404752"
+                  , normalBorderColor = "#404752" --"#343C48"
                   }
 -- Hooks --
 
