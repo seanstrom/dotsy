@@ -1,4 +1,5 @@
 *.swp
+.#*
 logfile
 .stack-work/
 .dir-locals.el
