@@ -38,16 +38,12 @@ myLayout =
   . smartBorders
   . onWorkspace "movie" (magnifier m ||| layoutHints Full)
   . avoidStruts
-  . onWorkspace "test" (multimastered 2 (1/100) (1/2) Grid)
-  . onWorkspace "gimp" (named "G" gimp)
-  . onWorkspace "xm-conf" ((nav $ ModifiedLayout (ExpandEdges 1) (Tall 1 0.3 0.5)) ||| Full)
   $ m ||| named "F" (noBorders Full)
       where nav = configurableNavigation (navigateColor "#ffff00")
             m = named "M"
               . lessBorders Screen
               . layoutHintsToCenter
               . addTabs shrinkText defaultTheme
-              . nav
               . boringAuto
               . subLayout [] (Simplest ||| simplestFloat)
               $ mosaic 1.5 [7,5,2]
