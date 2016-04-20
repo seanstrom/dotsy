@@ -6,7 +6,7 @@ Config {
    , bgColor         = "#151515"
    , fgColor         = "#90a959"
    , alpha           = 255
-   , position        = Top
+   , position        = TopW L 95
    , border          = NoBorder
    , borderColor     = "#151515"
    , borderWidth     = 0
