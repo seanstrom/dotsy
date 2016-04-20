@@ -1,0 +1,15 @@
+#!/bin/sh
+
+trayer \
+--edge top \
+--align right \
+--SetDockType true \
+--SetPartialStrut true \
+--expand true \
+--width 5 \
+--transparent true \
+--tint 0x151515 \
+--alpha 0 \
+--height 20 \
+--monitor $1 \
+&

@@ -1,0 +1,5 @@
+#!/bin/sh
+
+screenX=$1
+/usr/bin/env trayer-init $screenX &
+/usr/bin/env xmobar -x $screenX
