@@ -27,6 +27,7 @@ import XMonad.Layout.NoBorders
 import XMonad.Layout.PerWorkspace
 import XMonad.Layout.Simplest
 import XMonad.Layout.SimplestFloat
+import XMonad.Layout.Spacing
 import XMonad.Layout.SubLayouts
 import XMonad.Layout.Tabbed
 import XMonad.Layout.TrackFloating
@@ -35,6 +36,7 @@ import XMonad.Layout.WindowNavigation
 
 myLayout =
   trackFloating
+  . smartSpacing 3
   . smartBorders
   . onWorkspace "movie" (magnifier m ||| layoutHints Full)
   . avoidStruts
