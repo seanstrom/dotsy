@@ -38,7 +38,7 @@ import XMonad
 import XMonad.Actions.UpdatePointer
 import XMonad.Actions.SpawnOn
 import XMonad.Actions.TopicSpace
-import XMonad.Hooks.DynamicBars
+-- import XMonad.Hooks.DynamicBars
 import XMonad.Hooks.DynamicLog
 import XMonad.Hooks.EwmhDesktops
 import XMonad.Hooks.ManageDocks
@@ -56,7 +56,7 @@ import qualified XMonad.StackSet as W
 import My.Layout (myLayout)
 import My.Topics (myTopics, myTopicConfig, spawnShell, spawnShellIn)
 import My.Keys (myKeys, focusFollow)
--- import My.DynamicBars
+import My.DynamicBars
 
 main :: IO ()
 main = do
