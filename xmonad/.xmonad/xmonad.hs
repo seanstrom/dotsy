@@ -65,10 +65,10 @@ main = do
   xmonad . ewmh . myUrgencyHook $ myConfig
 
 statusBarStart :: DynamicStatusBar
-statusBarStart (S id) = spawnPipe $ "/usr/bin/env xmobar -x " ++ show id
+statusBarStart (S id) = spawnPipe $ "/usr/bin/env statusbar " ++ show id
 
 statusBarClean :: DynamicStatusBarCleanup
-statusBarClean = safeSpawn "pkill -f" ["xmobar"]
+statusBarClean = safeSpawn "/usr/bin/env statusbar-kill" []
 
 myTerminal = "termite"
 
