@@ -177,9 +177,9 @@ focusFollow _ = return (All True)
 
 
 myXPConfig :: XPConfig
-myXPConfig = defaultXPConfig { font = "xft:Profont:pixelsize=15:autohint=true" }
+myXPConfig = def { font = "xft:Profont:pixelsize=15:autohint=true" }
 
-gsConfig = defaultGSConfig { gs_navigate = fix $ \self ->
+gsConfig = def { gs_navigate = fix $ \self ->
     let navKeyMap = M.mapKeys ((,) 0) $ M.fromList $
                 [(xK_Escape, cancel)
                 ,(xK_Return, select)

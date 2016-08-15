@@ -36,10 +36,10 @@ import XMonad.Layout.WindowNavigation
 
 myLayout =
   trackFloating
+  . avoidStruts
   . smartSpacing 3
   . smartBorders
   . onWorkspace "movie" (magnifier m ||| layoutHints Full)
-  . avoidStruts
   $ m ||| named "F" (noBorders Full)
       where nav = configurableNavigation (navigateColor "#ffff00")
             m = named "M"
