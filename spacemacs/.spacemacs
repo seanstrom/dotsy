@@ -26,12 +26,8 @@ values."
      auto-completion
      better-defaults
      emacs-lisp
-     git
      markdown
-     ;; org
-     ;; (shell :variables
-     ;;        shell-default-height 30
-     ;;        shell-default-position 'bottom)
+     org
      ;; spell-checking
      syntax-checking
      ;; version-control
@@ -40,14 +36,13 @@ values."
      clojure
      haskell
      purescript
+     elm
      javascript
      react
      ruby
-     go
      nixos
-     c-c++
-     lua
      html
+     themes-megapack
      )
    ;; List of additional packages that will be installed without being
    ;; wrapped in a layer. If you need some configuration for these
@@ -93,10 +88,11 @@ values."
    ;; List of themes, the first of the list is loaded when spacemacs starts.
    ;; Press <SPC> T n to cycle to the next theme in the list (works great
    ;; with 2 themes variants, one dark and one light)
-   dotspacemacs-themes '(solarized-dark
+   dotspacemacs-themes '(gruvbox
+                         solarized-light
+                         solarized-dark
                          spacemacs-dark
                          spacemacs-light
-                         solarized-light
                          leuven
                          monokai
                          zenburn)
@@ -108,7 +104,7 @@ values."
                                :size 13
                                :weight normal
                                :width normal
-                               :powerline-scale 1.1)
+                               :powerline-scale 1.2)
    ;; The leader key
    dotspacemacs-leader-key "SPC"
    ;; The leader key accessible in `emacs state' and `insert state'
@@ -275,10 +271,15 @@ layers configuration. You are free to put any user code."
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
+ '(custom-safe-themes
+   (quote
+    ("badc4f9ae3ee82a5ca711f3fd48c3f49ebe20e6303bba1912d4e2d19dd60ec98" default)))
  '(evil-shift-width 2)
  '(safe-local-variable-values
    (quote
     ((eval progn
+           (setq flycheck-javascript-eslint-executable "~/dev/react-redux/node_modules/.bin/eslint"))
+     (eval progn
            (setq flycheck-javascript-eslint-executable "~/dev/hashrabbit-org/hr-dashboard/node_modules/.bin/eslint"))
      (haskell-process-args-ghci "ghci")
      (haskell-process-path-ghci . "stack")
@@ -289,5 +290,4 @@ layers configuration. You are free to put any user code."
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(company-tooltip-common ((t (:inherit company-tooltip :weight bold :underline nil))))
- '(company-tooltip-common-selection ((t (:inherit company-tooltip-selection :weight bold :underline nil)))))
+ )
