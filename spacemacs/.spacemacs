@@ -31,6 +31,7 @@ values."
      ;; spell-checking
      syntax-checking
      ;; version-control
+     eyebrowse
      scheme
      racket
      clojure
@@ -48,7 +49,8 @@ values."
    ;; wrapped in a layer. If you need some configuration for these
    ;; packages then consider to create a layer, you can also put the
    ;; configuration in `dotspacemacs/config'.
-   dotspacemacs-additional-packages '(livescript-mode
+   dotspacemacs-additional-packages '(atom-dark-theme
+                                      livescript-mode
                                       stylus-mode
                                       jade-mode)
    ;; A list of packages and/or extensions that will not be install and loaded.
@@ -88,9 +90,11 @@ values."
    ;; List of themes, the first of the list is loaded when spacemacs starts.
    ;; Press <SPC> T n to cycle to the next theme in the list (works great
    ;; with 2 themes variants, one dark and one light)
-   dotspacemacs-themes '(gruvbox
+   dotspacemacs-themes '(
+                         gruvbox
                          solarized-light
                          solarized-dark
+                         atom-dark
                          spacemacs-dark
                          spacemacs-light
                          leuven
@@ -100,8 +104,8 @@ values."
    dotspacemacs-colorize-cursor-according-to-state t
    ;; Default font. `powerline-scale' allows to quickly tweak the mode-line
    ;; size to make separators look not too crappy.
-   dotspacemacs-default-font '("Input"
-                               :size 13
+   dotspacemacs-default-font '("Iosevka"
+                               :size 22
                                :weight normal
                                :width normal
                                :powerline-scale 1.2)
@@ -219,7 +223,7 @@ layers configuration. You are free to put any user code."
   (setq-default
    ;; js2-mode
    js2-basic-offset 2
-   js-switch-indent-offset 0
+   js-switch-indent-offset 2
    js2-indent-switch-body t
    ;; web-mode
    css-indent-offset 2
@@ -227,6 +231,8 @@ layers configuration. You are free to put any user code."
    web-mode-css-indent-offset 2
    web-mode-code-indent-offset 2
    web-mode-attr-indent-offset 2)
+
+  (setq elm-indent-offset 2)
 
   (with-eval-after-load 'web-mode
     (add-to-list 'web-mode-indentation-params '("lineup-args" . nil))
@@ -259,6 +265,8 @@ layers configuration. You are free to put any user code."
                                      "JSON"))
   (custom-set-variables
    '(evil-shift-width 2))
+
+  (add-to-list 'auto-mode-alist '("\\.js\\'" . js2-jsx-mode))
   ;; (setq-default dotspacemacs-configuration-layers
   ;;               '((haskell :variables haskell-process-type 'cabal-ghci)))
   ;; (setq-default flycheck-disabled-checkers '(haskell-stack-ghc))
@@ -275,6 +283,9 @@ layers configuration. You are free to put any user code."
    (quote
     ("badc4f9ae3ee82a5ca711f3fd48c3f49ebe20e6303bba1912d4e2d19dd60ec98" default)))
  '(evil-shift-width 2)
+ '(package-selected-packages
+   (quote
+    (atom-dark-theme highlight iedit undo-tree async s eyebrowse anzu smartparens projectile helm helm-core hydra dash package-build evil zonokai-theme zenburn-theme zen-and-art-theme web-mode web-beautify underwater-theme ujelly-theme twilight-theme twilight-bright-theme twilight-anti-bright-theme tronesque-theme toxi-theme toc-org tao-theme tangotango-theme tango-plus-theme tango-2-theme tagedit sunny-day-theme sublime-themes subatomic256-theme subatomic-theme stylus-mode sws-mode stekene-theme spacegray-theme soothe-theme soft-stone-theme soft-morning-theme soft-charcoal-theme smyx-theme slim-mode shm seti-theme scss-mode sass-mode rvm ruby-tools ruby-test-mode rubocop rspec-mode robe reverse-theme rbenv railscasts-theme racket-mode faceup purple-haze-theme psci purescript-mode psc-ide professional-theme planet-theme phoenix-dark-pink-theme phoenix-dark-mono-theme pastels-on-dark-theme organic-green-theme org-repo-todo org-present org-pomodoro alert log4e gntp org-plus-contrib org-bullets omtose-phellack-theme oldlace-theme occidental-theme obsidian-theme noctilux-theme nix-mode niflheim-theme naquadah-theme mustang-theme monokai-theme monochrome-theme molokai-theme moe-theme mmm-mode minimal-theme material-theme markdown-toc markdown-mode majapahit-theme lush-theme livescript-mode light-soap-theme less-css-mode json-mode json-snatcher json-reformat js2-refactor js2-mode js-doc jbeans-theme jazz-theme jade-mode ir-black-theme inkpot-theme htmlize hindent heroku-theme hemisu-theme helm-nixos-options helm-css-scss helm-company helm-c-yasnippet hc-zenburn-theme haskell-snippets haml-mode gruber-darker-theme grandshell-theme gotham-theme gnuplot gh-md geiser gandalf-theme flycheck-pos-tip flycheck-haskell flycheck-elm flycheck flatui-theme flatland-theme firebelly-theme farmhouse-theme espresso-theme emmet-mode elm-mode f dracula-theme django-theme darktooth-theme darkmine-theme darkburn-theme dakrone-theme cyberpunk-theme company-web web-completion-data company-tern dash-functional tern company-statistics company-quickhelp pos-tip company-nixos-options nixos-options company-ghc ghc haskell-mode company-cabal company colorsarenice-theme color-theme-sanityinc-tomorrow color-theme-sanityinc-solarized coffee-mode cmm-mode clues-theme clj-refactor inflections edn multiple-cursors paredit peg cider-eval-sexp-fu cider queue clojure-mode chruby cherry-blossom-theme busybee-theme bundler inf-ruby bubbleberry-theme birds-of-paradise-plus-theme badwolf-theme auto-yasnippet yasnippet apropospriate-theme anti-zenburn-theme ample-zen-theme ample-theme alect-themes afternoon-theme ac-ispell auto-complete gruvbox-theme ws-butler window-numbering which-key volatile-highlights vi-tilde-fringe use-package spacemacs-theme spaceline smooth-scrolling restart-emacs rainbow-delimiters quelpa popwin persp-mode pcre2el paradox page-break-lines open-junk-file neotree move-text macrostep lorem-ipsum linum-relative leuven-theme info+ indent-guide ido-vertical-mode hungry-delete hl-todo highlight-parentheses highlight-numbers highlight-indentation help-fns+ helm-themes helm-swoop helm-projectile helm-mode-manager helm-make helm-flx helm-descbinds helm-ag google-translate golden-ratio flx-ido fill-column-indicator fancy-battery expand-region exec-path-from-shell evil-visualstar evil-tutor evil-surround evil-search-highlight-persist evil-numbers evil-nerd-commenter evil-mc evil-matchit evil-lisp-state evil-indent-plus evil-iedit-state evil-exchange evil-escape evil-args evil-anzu eval-sexp-fu elisp-slime-nav define-word clean-aindent-mode buffer-move bracketed-paste auto-highlight-symbol auto-compile aggressive-indent adaptive-wrap ace-window ace-link ace-jump-helm-line)))
  '(safe-local-variable-values
    (quote
     ((eval progn
@@ -290,4 +301,6 @@ layers configuration. You are free to put any user code."
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- )
+ '(default ((t (:background nil))))
+ '(company-tooltip-common ((t (:inherit company-tooltip :weight bold :underline nil))))
+ '(company-tooltip-common-selection ((t (:inherit company-tooltip-selection :weight bold :underline nil)))))
