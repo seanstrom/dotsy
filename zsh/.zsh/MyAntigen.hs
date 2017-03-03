@@ -16,9 +16,9 @@ import Antigen (
 bundles =
   [ bundle "Tarrasch/zsh-functional"
   , bundle "Tarrasch/zsh-bd"
+  , bundle "Tarrasch/zsh-history-substring-search"
   , bundle "zsh-users/zsh-syntax-highlighting"
-  , bundle "zsh-users/zsh-history-substring-search"
-  , bundle "sindresorhus/pure"
+--  , bundle "sindresorhus/pure"
   , bundle "zsh-users/zsh-completions"
 
   -- If you use a plugin that doesn't have a *.plugin.zsh file. You can set a

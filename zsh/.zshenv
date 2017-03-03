@@ -1,4 +1,4 @@
-export SHELL=/usr/local/bin/zsh
+export SHELL=/usr/local/bin/fish
 export PATH="~/.npm-global/bin:~/.gem/bin:$PATH:~/.nix-profile/bin:~/.local/bin:~/bin"
 # export NIXPKGS=~/dev/nixpkgs
 export EDITOR=nvim
